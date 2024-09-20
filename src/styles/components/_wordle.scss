@@ -1,0 +1,76 @@
+.wordle {
+  max-width: 500px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.reveal {
+  height: 85px;
+}
+
+.guess-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  font-size: 1.5rem ;
+}
+
+.block-row {
+  display: inline-flex;
+  gap: 15px;
+}
+
+.block {
+  pointer-events: none;
+  display: grid;
+  place-content: center;
+  height: 50px;
+  width: 50px;
+  pointer-events: none;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 1 );
+  transition: border-color 0.3s;
+  border: 2px solid transparent;
+}
+
+.block.active {
+  border-color: #007bff;
+}
+
+.wordle input {
+  position: absolute;
+  left: -9999px;
+}
+
+.block.green {
+  border-color: #28a745;
+}
+
+.block.yellow {
+  border-color: #ffc107;
+}
+
+.shake {
+  animation: shake 0.5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+  75% {
+    transform: translateX(-5px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
